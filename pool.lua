@@ -29,4 +29,10 @@ function pool:free(obj)
 	if obj.reset then obj.reset() end
 end
 
+function pool:clear()
+	for k in pairs(self.freeObjects) do
+		self.freeObjects[k] = nil
+	end
+end
+
 return pool
