@@ -5,8 +5,8 @@ function pool.create(newObject, poolSize)
 	poolSize = poolSize or 16
 	assert(newObject, "A function that returns new objects for the pool is required.")
 
-	freeObjects = {}
-	for i = 1, poolSize do
+	local freeObjects = {}
+	for _ = 1, poolSize do
 		table.insert(freeObjects, newObject())
 	end
 
